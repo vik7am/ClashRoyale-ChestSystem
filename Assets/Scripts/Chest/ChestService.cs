@@ -1,15 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace ChestSystem
 {
     public class ChestService : GenericMonoSingleton<ChestService>
     {
-        public ChestSlotsController chestSlotsController;
+        public ChestInventoryController chestSlotsController;
 
         public void SpawnChest(){
-            if(chestSlotsController.emptySlotsAvailable()){
+            if(chestSlotsController.EmptySlotsAvailable()){
                 chestSlotsController.SpawnChest();
             }
             else

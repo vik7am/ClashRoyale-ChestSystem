@@ -921,7 +921,7 @@ GameObject:
   - component: {fileID: 1409220587}
   - component: {fileID: 1409220588}
   m_Layer: 5
-  m_Name: ChestSlots
+  m_Name: ChestInventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -993,6 +993,7 @@ MonoBehaviour:
   - {fileID: 668533733}
   - {fileID: 1277705188}
   - {fileID: 626443777}
+  chestConfigurationList: {fileID: 11400000, guid: 04d0b4b43e435fe49ae68dc2a676255e, type: 2}
 --- !u!1 &1833527080
 GameObject:
   m_ObjectHideFlags: 0

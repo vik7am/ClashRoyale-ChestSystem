@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace ChestSystem
@@ -18,8 +16,10 @@ namespace ChestSystem
         public bool IsSlotEmpty(){
             return slotEmpty;
         }
-        public void SpawnChest(){
-            chestModel = new ChestModel();
+        public void SpawnChest(ChestConfigArraySO chestConfigArraySO){
+            int randomChestNo = Random.Range(0, 4);
+            ChestConfigSO chestConfig = chestConfigArraySO.chestConfigArray[randomChestNo];
+            chestModel = new ChestModel(chestConfig);
             chestController = new ChestController(chestView, chestModel, transform);
             chestController.SetChestParentTransform(transform);
             slotEmpty = false;

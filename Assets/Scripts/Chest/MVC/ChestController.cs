@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace ChestSystem
@@ -13,11 +11,11 @@ namespace ChestSystem
             _chestView = GameObject.Instantiate<ChestView>(chestView, position);
             _chestView.transform.localScale = Vector3.one;
             _chestModel = chestModel;
+            _chestView.SetSprite(_chestModel.sprite);
         }
 
         public void SetChestParentTransform(Transform parent){
             _chestView.transform.SetParent(parent);
         }
-
     }
 }

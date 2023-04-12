@@ -1,12 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace ChestSystem
 {
-    public class ChestSlotsController : MonoBehaviour
+    public class ChestInventoryController : MonoBehaviour
     {
-        public ChestSlotController[] chestSlotControllers;
+        [SerializeField] private ChestSlotController[] chestSlotControllers;
+        [SerializeField] private ChestConfigArraySO chestConfigArraySO;
         private int chestSlotsUsed;
         private int totalChestSlots;
 
@@ -15,12 +14,12 @@ namespace ChestSystem
             totalChestSlots = 4;
         }
 
-        public bool emptySlotsAvailable(){
+        public bool EmptySlotsAvailable(){
             return chestSlotsUsed < totalChestSlots;
         }
 
         public void SpawnChest(){
-            GetEmptyChestSlot().SpawnChest();
+            GetEmptyChestSlot().SpawnChest(chestConfigArraySO);
             chestSlotsUsed++;
         }
 
